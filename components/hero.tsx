@@ -1,31 +1,44 @@
 "use client"
 
-import { useState } from 'react'
-import { Play, ArrowRight } from 'lucide-react'
-import Image from 'next/image'
+import { useState } from "react"
+import { Play, ArrowRight } from "lucide-react"
+import Image from "next/image"
 
 export default function Hero() {
   const [isPlaying, setIsPlaying] = useState(false)
 
   const logos = [
-    { name: 'IAS', label: 'Administrative', color: 'from-primary to-primary/80' },
-    { name: 'IPS', label: 'Police Service', color: 'from-secondary to-secondary/80' },
-    { name: 'IFS', label: 'Forest Service', color: 'from-green-600 to-green-700' }
+    {
+      name: "IAS",
+      label: "Administrative",
+      color: "from-primary to-primary/80",
+      file: "ias-logo.png", // /public/ias-logo.png
+    },
+    {
+      name: "IPS",
+      label: "Police Service",
+      color: "from-secondary to-secondary/80",
+      file: "ips-logo.jpg", // /public/ips-logo.png
+    },
+    {
+      name: "IFS",
+      label: "Forest Service",
+      color: "from-green-600 to-green-700",
+      file: "ifs-logo.png", // /public/ifs-logo.png
+    },
   ]
 
   return (
     <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <div className="absolute inset-0 bg-cover bg-center" style={{
-        backgroundImage: `url('/professional-government-building-architecture.jpg')`
-      }}></div>
-      
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: `url('/kerala-secretariat.jpg')`,
+        }}
+      ></div>
+
       {/* Blue gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-600/40 via-blue-500/30 to-primary/40"></div>
-
-      {/* Pattern overlay */}
-      <div className="absolute inset-0 opacity-20" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%231E3D9B' fillOpacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-      }}></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -33,17 +46,24 @@ export default function Hero() {
           <div className="space-y-8 animate-slideInUp">
             <div className="flex gap-6">
               {logos.map((logo) => (
-                <div key={logo.name} className="flex flex-col items-center gap-2">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${logo.color} rounded-lg flex items-center justify-center text-white font-bold shadow-lg hover:scale-110 transition-transform`}>
+                <div
+                  key={logo.name}
+                  className="flex flex-col items-center gap-2"
+                >
+                  <div
+                    className={`w-16 h-16 bg-gradient-to-br ${logo.color} rounded-lg flex items-center justify-center text-white font-bold shadow-lg hover:scale-110 transition-transform`}
+                  >
                     <Image
-                      src={`/.jpg?key=aszic&height=64&width=64&query=${logo.name} service emblem`}
-                      alt={`${logo.name} service emblem`}
+                      src={`/${logo.file}`} // uses /public/<file>
+                      alt={`${logo.label} (${logo.name}) logo`}
                       width={64}
                       height={64}
                       className="w-full h-full object-cover rounded-lg"
                     />
                   </div>
-                  <span className="text-xs font-semibold text-white/90">{logo.label}</span>
+                  <span className="text-xs font-semibold text-white/90">
+                    {logo.label}
+                  </span>
                 </div>
               ))}
             </div>
@@ -56,9 +76,10 @@ export default function Hero() {
                 Elevating Governance.
               </h1>
             </div>
-            
+
             <p className="text-lg text-white/90 leading-relaxed max-w-lg">
-              Streamlining workflows and empowering Kerala's AIS leadership through digital innovation.
+              Streamlining workflows and empowering Kerala&apos;s AIS leadership
+              through digital innovation.
             </p>
 
             {/* CTA Buttons */}
@@ -77,12 +98,15 @@ export default function Hero() {
           <div className="animate-slideInRight relative h-80 sm:h-96">
             <div className="relative h-full rounded-2xl overflow-hidden shadow-2xl group border-4 border-primary/10">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10"></div>
-              
+
               <video
                 className="w-full h-full object-cover"
                 poster="/kerala-ais-officers-administrative-excellence-digi.jpg"
               >
-                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+                <source
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                  type="video/mp4"
+                />
               </video>
 
               {!isPlaying && (
