@@ -1,79 +1,46 @@
 'use client'
 
-import { Quote } from 'lucide-react'
-
-const mottos = [
-  {
-    quote: "A civil servant's true strength lies not in position, but in the power to transform lives through transparent and compassionate governance",
-    officer: "Dr. M. Viswesvarayya",
-    service: "IAS Pioneer"
-  },
-  {
-    quote: "Serve the nation with unwavering integrity; for the trust of citizens is the foundation of strong governance",
-    officer: "Sardar Vallabhbhai Patel",
-    service: "IAS Legend"
-  },
-  {
-    quote: "Excellence is not a destination, but a continuous journey of improvement in service to the nation",
-    officer: "Dr. Rajendra Prasad",
-    service: "IAS Visionary"
-  },
-  {
-    quote: "The power to make a difference lies in every decision; use it wisely for the welfare of all",
-    officer: "Pandit Jawaharlal Nehru",
-    service: "IAS Administrator"
-  },
-  {
-    quote: "Combat corruption through transparency and accountability; this is the foundation of ethical governance",
-    officer: "Keshab Mahindra",
-    service: "IAS Administrator"
-  },
-  {
-    quote: "Every citizen deserves dignity and justice; let this principle guide every action and decision",
-    officer: "K. M. Chandrasekhar",
-    service: "IAS Officer"
-  }
-]
-
-export default function Mottos() {
+export default function CivilServiceObservance() {
   return (
-    <section id="mottos" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-primary/5">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 text-balance">
-            Wisdom of <span className="text-primary">Service Excellence</span>
-          </h2>
-          <p className="text-xl text-foreground/70">
-            Inspirational principles from legendary Indian All India Services officers
-          </p>
+    <section className="py-20 px-4 bg-background relative overflow-hidden">
+
+      {/* Soft background gradients */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.22]">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-amber-200/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-emerald-200/30 rounded-full blur-3xl" />
+      </div>
+
+      <div className="relative max-w-3xl mx-auto text-center">
+
+        {/* Soft emphasis heading */}
+        <div className="text-xs sm:text-sm font-bold tracking-widest uppercase text-primary/90 mb-6">
+          April 21 — National Civil Service Day
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {mottos.slice(1).map((motto, index) => (
-            <div key={index} className="bg-card border border-border rounded-xl p-8 hover:shadow-xl hover:border-primary/50 transition-all group">
-              <Quote className="w-8 h-8 text-accent mb-4 group-hover:scale-110 transition-transform" />
-              <p className="text-lg text-foreground mb-6 italic font-medium leading-relaxed">
-                "{motto.quote}"
-              </p>
-              <div className="pt-4 border-t border-border">
-                <p className="text-sm font-bold text-primary">{motto.officer}</p>
-                <p className="text-xs text-foreground/60">{motto.service}</p>
-              </div>
-            </div>
-          ))}
+        {/* India tricolour underline */}
+        <div className="flex justify-center gap-1 mb-10">
+          <span className="h-1 w-12 rounded-full bg-[#FF9933]" />
+          <span className="h-1 w-12 rounded-full bg-white border border-slate-200/40" />
+          <span className="h-1 w-12 rounded-full bg-[#138808]" />
         </div>
 
-        <div className="text-center space-y-6 mt-16">
-          <blockquote className="space-y-6">
-            <Quote className="w-10 h-10 text-primary mx-auto opacity-60" />
-            <p className="text-2xl sm:text-3xl font-semibold text-foreground leading-relaxed text-balance italic">
-              "{mottos[0].quote}"
-            </p>
-            <footer className="space-y-2">
-              <p className="text-lg font-bold text-primary">{mottos[0].officer}</p>
-              <p className="text-sm text-foreground/60">{mottos[0].service}</p>
-            </footer>
-          </blockquote>
+        {/* Main Paragraph */}
+        <p className="text-sm sm:text-lg leading-relaxed text-foreground/90 font-medium px-4">
+          It was on this day in 1947 that 
+          <span className="font-semibold text-amber-700"> Sardar Vallabhbhai Patel</span>, 
+          the great “Iron Man of India”, honoured civil servants by calling them the
+          <span className="px-1.5 py-0.5 mx-1 rounded-md bg-primary/10 text-primary font-semibold italic">
+            “Steel Frame of India”
+          </span>
+          — the resolute force that executes the policies of the government and
+          strengthens the wheel of governance that propels the nation forward.
+        </p>
+
+        {/* Minimal motif */}
+        <div className="mt-10 flex justify-center items-center gap-2 text-[0.65rem] text-foreground/60">
+          <span className="h-[1px] w-10 bg-gradient-to-r from-transparent via-foreground/30 to-transparent" />
+          In honour of India’s dedicated civil servants
+          <span className="h-[1px] w-10 bg-gradient-to-r from-transparent via-foreground/30 to-transparent" />
         </div>
       </div>
     </section>

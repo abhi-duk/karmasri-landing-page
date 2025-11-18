@@ -1,51 +1,80 @@
+import Image from "next/image"
+
 export default function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          <div>
-            <h3 className="font-bold text-lg mb-4">KARMASRI</h3>
-            <p className="text-primary-foreground/80 text-sm leading-relaxed">
-              A comprehensive platform transforming resource management and service delivery for Kerala cadre All India Services officers.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-4 text-primary-foreground">Quick Links</h4>
-            <ul className="space-y-2 text-sm text-primary-foreground/80">
-              <li><a href="#services" className="hover:text-white transition">Services</a></li>
-              <li><a href="#mottos" className="hover:text-white transition">Inspiration</a></li>
-              <li><a href="#stats" className="hover:text-white transition">Platform Stats</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-4 text-primary-foreground">AIS Services</h4>
-            <ul className="space-y-2 text-sm text-primary-foreground/80">
-              <li><a href="#" className="hover:text-white transition">IAS Officers</a></li>
-              <li><a href="#" className="hover:text-white transition">IPS Officers</a></li>
-              <li><a href="#" className="hover:text-white transition">IFS Officers</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-4 text-primary-foreground">Connect</h4>
-            <ul className="space-y-2 text-sm text-primary-foreground/80">
-              <li><a href="#" className="hover:text-white transition">Support Portal</a></li>
-              <li><a href="#" className="hover:text-white transition">Documentation</a></li>
-              <li><a href="#" className="hover:text-white transition">Contact Us</a></li>
-            </ul>
-          </div>
+    <footer className="bg-[#0B4A8F] text-slate-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto space-y-10">
+
+        {/* Tricolour accent */}
+        <div className="flex justify-center gap-1">
+          <span className="h-1.5 w-12 rounded-full bg-[#FF9933]" />
+          <span className="h-1.5 w-12 rounded-full bg-white" />
+          <span className="h-1.5 w-12 rounded-full bg-[#138808]" />
         </div>
-        <div className="border-t border-primary-foreground/20 pt-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-            <p className="text-sm text-primary-foreground/70">
-              &copy; 2025 KARMASRI - General Administration Department, Government of Kerala. Serving with Integrity.
+
+        {/* MAIN ROW: Left (KARMASRI) | Right (Owned + Developed) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+          {/* LEFT SIDE */}
+          <div>
+            <h3 className="font-semibold text-lg tracking-wide">
+              KARMASRI
+            </h3>
+            <p className="mt-2 text-sm text-slate-100/85 max-w-sm leading-relaxed">
+              Streamlining administrative excellence for Kerala cadre All India Services officers.
             </p>
-            <div className="flex gap-6 md:justify-end text-sm text-primary-foreground/70">
-              <a href="#" className="hover:text-white transition">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition">Terms of Service</a>
-              <a href="#" className="hover:text-white transition">Accessibility</a>
+          </div>
+
+          {/* RIGHT SIDE (Ownership + CDIPD/DUK) */}
+          <div className="flex flex-col items-start md:items-end gap-6">
+
+            {/* OWNERSHIP */}
+            <div className="text-left md:text-right">
+              <p className="font-semibold text-sm">Owned By</p>
+              <p className="text-xs text-slate-100/80 leading-relaxed">
+                General Administration Department (AIS),<br />
+                Government of Kerala.
+              </p>
             </div>
+
+            {/* CDIPD + DUK */}
+            <div className="flex items-center gap-4 md:justify-end">
+              
+              <div className="text-left md:text-right text-xs leading-tight text-slate-100/80">
+                <p className="font-semibold text-slate-50">
+                  Designed &amp; Developed by CDIPD
+                </p>
+                <p className="text-slate-100/75">
+                  Digital University Kerala
+                </p>
+              </div>
+<Image
+                src="/duk_logo_white.png"
+                alt="Digital University Kerala"
+                width={100}       // bigger logo
+                height={100}
+                className="object-contain"
+              />
+            </div>
+
           </div>
         </div>
+
+        {/* BOTTOM ROW */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-4">
+
+          <p className="text-[0.75rem] text-slate-100/75">
+            © 2025 KARMASRI Portal, Government of Kerala.
+          </p>
+
+          <div className="flex gap-6 text-[0.75rem] text-slate-100/85">
+            <a href="#" className="hover:text-white transition">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition">Terms of Service</a>
+            <a href="#" className="hover:text-white transition">Accessibility</a>
+          </div>
+
+        </div>
+
       </div>
     </footer>
   )

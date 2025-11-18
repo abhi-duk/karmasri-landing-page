@@ -11,19 +11,19 @@ export default function Hero() {
     {
       name: "IAS",
       label: "Administrative",
-      color: "from-primary to-primary/80",
+      color: "from-blue-100 to-blue-100",
       file: "ias-logo.png", // /public/ias-logo.png
     },
     {
       name: "IPS",
       label: "Police Service",
-      color: "from-secondary to-secondary/80",
-      file: "ips-logo.jpg", // /public/ips-logo.png
+      color: "from-white to-yellow-100",
+      file: "ips-logo.png", // /public/ips-logo.png
     },
     {
       name: "IFS",
       label: "Forest Service",
-      color: "from-green-600 to-green-700",
+      color: "from-green-100 to-green-200",
       file: "ifs-logo.png", // /public/ifs-logo.png
     },
   ]
@@ -38,7 +38,7 @@ export default function Hero() {
       ></div>
 
       {/* Blue gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/40 via-blue-500/30 to-primary/40"></div>
+<div className="absolute inset-0 bg-gradient-to-br from-[#0a1a33]/90 via-[#0d2345]/90 to-[#102b57]/85"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -58,7 +58,7 @@ export default function Hero() {
                       alt={`${logo.label} (${logo.name}) logo`}
                       width={64}
                       height={64}
-                      className="w-full h-full object-cover rounded-lg"
+                      className="w-full h-full object-contain rounded-lg"
                     />
                   </div>
                   <span className="text-xs font-semibold text-white/90">
@@ -68,14 +68,29 @@ export default function Hero() {
               ))}
             </div>
 
-            <div>
-              <h1 className="text-3xl sm:text-4xl font-bold text-white leading-tight text-balance">
-                Empowering Leadership.
-              </h1>
-              <h1 className="text-3xl sm:text-4xl font-bold text-white/95 mt-2 leading-tight text-balance">
-                Elevating Governance.
-              </h1>
-            </div>
+            <div className="space-y-1">
+  {/* Large Golden Title */}
+  <h1
+    className="
+      text-5xl sm:text-6xl font-extrabold 
+      bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-500
+      bg-clip-text text-transparent
+      tracking-wide drop-shadow-lg
+    "
+  >
+    KARMASRI
+  </h1>
+
+  {/* White Headings */}
+  <h1 className="text-2xl sm:text-3xl font-bold text-white leading-tight text-balance">
+    Empowering Leadership.
+  </h1>
+
+  <h1 className="text-2xl sm:text-3xl font-bold text-white/95 leading-tight text-balance">
+    Elevating Governance.
+  </h1>
+</div>
+
 
             <p className="text-lg text-white/90 leading-relaxed max-w-lg">
               Streamlining workflows and empowering Kerala&apos;s AIS leadership
@@ -83,7 +98,7 @@ export default function Hero() {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-0">
               <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 w-fit hover:scale-105 shadow-lg">
                 <span>Access Portal</span>
                 <ArrowRight className="w-5 h-5" />

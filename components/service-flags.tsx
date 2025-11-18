@@ -6,21 +6,21 @@ export default function ServiceFlags() {
       name: 'IAS',
       fullName: 'Indian Administrative Service',
       description: 'Civil Administration & Governance',
-      image: '/ias-administrative-service-emblem.jpg',
+      image: '/ias-logo.png',
       color: 'from-primary to-primary/70'
     },
     {
       name: 'IPS',
       fullName: 'Indian Police Service',
       description: 'Law & Order Management',
-      image: '/ips-police-service-emblem.jpg',
+      image: '/ips-logo.png',
       color: 'from-secondary to-secondary/70'
     },
     {
       name: 'IFS',
       fullName: 'Indian Forest Service',
       description: 'Environmental Management',
-      image: '/ifs-forest-service-emblem.jpg',
+      image: '/ifs-logo.png',
       color: 'from-green-600 to-green-500'
     }
   ]
@@ -30,7 +30,7 @@ export default function ServiceFlags() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 text-balance">
-            Serving All <span className="text-primary">India Services</span>
+            Serving <span className="text-primary">All India Services</span>
           </h2>
           <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
             Supporting Kerala cadre officers across all three major service streams with unified platform access
@@ -47,13 +47,11 @@ export default function ServiceFlags() {
                     alt={service.name}
                     width={200}
                     height={200}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
                 
-                <div className={`w-20 h-20 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg`}>
-                  <span className="text-2xl font-bold text-white">{service.name}</span>
-                </div>
+         
                 <h3 className="text-2xl font-bold text-primary mb-2">{service.name}</h3>
                 <p className="text-sm font-semibold text-foreground/60 mb-3">{service.fullName}</p>
                 <p className="text-foreground/70 text-sm leading-relaxed">{service.description}</p>
